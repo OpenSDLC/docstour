@@ -1,9 +1,24 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    "module": "es6",
+    "outDir": "./public",
+    "module": "commonjs",
     "target": "es5",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
     "jsx": "react",
+    "removeComments": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "sourceMap": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
     "allowJs": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
 }
