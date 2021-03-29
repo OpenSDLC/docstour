@@ -7,7 +7,12 @@
     "noImplicitThis": true,
     "noImplicitReturns": true,
     "esModuleInterop": true,
+    "strictNullChecks": true,
     "jsx": "react",
+    "lib": [
+      "es6",
+      "dom"
+    ],
     "removeComments": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
