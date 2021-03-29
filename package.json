@@ -1,5 +1,5 @@
 {
-  "name": "Fullstack TS Project",
+  "name": "docstour",
   "version": "1.0.0",
   "description": "Fullstack React/Express with Typescript Enabled",
   "main": "src/server/index.ts",
