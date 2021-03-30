@@ -1,10 +1,11 @@
+import dotenv from 'dotenv';
+
 // xyz require type
 const { Pool } = require('pg');
 
 // import from env to give access to MONGO_URI
 // require('dotenv').config();
 // xyz_ how to do for TypeScript
-import dotenv from 'dotenv';
 dotenv.config();
 
 const myURI = `${process.env.PG_URI}`;
