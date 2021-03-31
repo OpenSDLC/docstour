@@ -3,6 +3,7 @@ import { Component } from 'react';
 import LandingPage from './components/LandingPage/LandingPage';
 import DashboardContainer from './components/LandingPage/DashboardContainer';
 import { Provider } from 'react-redux';
+
 import './app.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
