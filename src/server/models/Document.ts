@@ -1,24 +1,18 @@
 import dotenv from 'dotenv';
+import { Pool } from 'pg';
 
-// xyz require type
-const { Pool } = require('pg');
-
-// import from env to give access to MONGO_URI
-// require('dotenv').config();
-// xyz_ how to do for TypeScript
 dotenv.config();
 
 const myURI = `${process.env.PG_URI}`;
-const URI = process.env.PG_URI || myURI;
 
-const pool = new Pool({
-  connection: myURI
-})
-
-// what to do here for TypeScript ? ? ?
+console.log(myURI);
+ 
+const pool: Pool = new Pool({
+  host: myURI
+});
 
 module.exports = {
-  query: (text, params, callback) => {
+  query: (text: string, params: Array<string | number>, callback: any) => {
     console.log('Query String: ', text);
     return pool.query(text, params, callback);
   }

@@ -1,11 +1,8 @@
 import jwt from 'jsonwebtoken';
 // xyz_ need to import
-import {  } from '../../types'; 
+import {  } from '../types'; 
 
 class DocController {
-  constructor() {
-
-  }
   // xyz_ need types
   static postDocument() {
 
@@ -19,7 +16,7 @@ class DocController {
 
   }
   // xyz_ need types
-  static updateDocument() {
+  static deleteDocument() {
 
   }
 }
