@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Doc from './Doc';
 
+
 class ListOfDocs extends Component {
   // render array of Docs
 
@@ -10,12 +11,14 @@ class ListOfDocs extends Component {
     // let url: String = '';
 
     arrOfDocs.push(<Doc />)
-
-    return (
-      <div>
-        {arrOfDocs}
-      </div>
-    )
+    // console.log('url', this.props.url);
+  return (
+    <div>
+    <div className='DocList'>
+    {arrOfDocs}
+    </div>
+    </div>
+  )
   }
 }
 
