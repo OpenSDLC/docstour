@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ListOfDocs from './ListOfDocs';
-import { Button, Box } from '@material-ui/core';
+import { Button, Box, Card } from '@material-ui/core';
 
 
 class DashboardContainer extends Component {
@@ -20,15 +20,11 @@ class DashboardContainer extends Component {
     return(
       <div>
         <Box>
-          Box 1
-          <Button>test button</Button>
-        </Box>
-        <div>
-          <h2>Docs</h2>
-          
-          <Button>Add a Doc</Button>
+          <Card><h2>Docs</h2></Card>
+          <Button color="primary">add a doc</Button>
           <ListOfDocs />
-        </div>
+
+        </Box>
       </div>
     );
   }
