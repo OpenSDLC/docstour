@@ -6,7 +6,7 @@ import AuthController from '../controllers/AuthController';
 // [] xyz_need to update types
 
 const apiRouter = express.Router();
-//
+
 // add methods to router object
 // apiRouter.post('/', AuthController.verifyUser, DocController.postDocument, (req, res) => {
 //   res.status(200).json(res.locals.document);
