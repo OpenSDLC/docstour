@@ -6,3 +6,12 @@ body {
   text-align: center;
   margin: auto;
 }
+
+.DocList {
+  border: 1pt;
+}
+
+/* .primaryBtn {
+  background-color: green;
+  color: white;
+} */
