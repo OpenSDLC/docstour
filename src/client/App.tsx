@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Component } from 'react';
-import LandingPage from './components/LandingPage/LandingPage';
 import { Provider } from 'react-redux';
+import LandingPage from './components/LandingPage/LandingPage';
+
 import './app.css';
 
 export default function App (){
