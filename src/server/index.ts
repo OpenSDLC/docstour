@@ -1,5 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express';
+import { Error } from './types';
 import os from 'os';
+import cors from 'cors';
 // import path from 'path';
 import apiRouter from './routes/api';
 
@@ -10,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('dist'));
-
+app.use(cors())
 app.use('/api', apiRouter);
 
 app.get('/api/getUsername', (req: Request, res: Response) => res.send({ username: os.userInfo().username }));
@@ -23,12 +25,6 @@ app.get('/', (req: Request, res: Response) => {
 app.get('/', (req: Request, res: Response) => {
   res.status(400).send('Status 400: Something broke')
 });
-
-// TypeScript interface
-interface Error {
-  status?: number;
-  message?: string;
-}
 
 // 500 error
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {

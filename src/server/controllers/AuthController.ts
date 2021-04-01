@@ -40,12 +40,10 @@ apiRouter.post('/', AuthController.verifyUser, DocController.postDocument, (req,
 
 
 class AuthController {
-  static authenticate(payload: Payload) {
-    /*
+  static async authenticate(payload: Payload) {
     
-    */
   }
-  static authorize(role: Role) {
+  static async authorize(role: Role) {
 
   }
   static verifyUser(username: string, password: string, hashedPassword: string) {

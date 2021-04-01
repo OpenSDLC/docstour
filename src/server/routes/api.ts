@@ -12,9 +12,10 @@ const apiRouter = express.Router();
 //   res.status(200).json(res.locals.document);
 // });
 
-// apiRouter.get('/', AuthController.verifyUser, DocController.getDocuments, (req, res) => {
-//   res.status(200).json(res.locals.allDocument);
-// });
+apiRouter.get('/', DocController.getDocuments, (req: Request, res: Response) => {
+  const { allDocuments } = res.locals;
+  res.status(200).json(allDocuments);
+});
 
 // apiRouter.put('/:id', AuthController.verifyUser, DocController.updateDocument, (req, res) => {
 //   res.status(200).json(res.locals.document);
