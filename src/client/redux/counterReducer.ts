@@ -1,14 +1,16 @@
 // import types 
 import { INCREMENT, DECREMENT } from './actionTypes';
-import { DefaultState, Action } from '../types';
+import { Action } from '../types';
 // define default state of each reducer
-
-const defaultState: DefaultState = {
+export interface CounterState {
+  count: number;
+}
+const counterState: CounterState = {
   count: 0,
 };
 
 // use defaul params to assign default state to state param
-export default function counterReducer(state = defaultState, action: Action) {
+export default function counterReducer(state = counterState, action: Action) {
   let newCount = state.count;
   switch(action.type) {
     case INCREMENT:

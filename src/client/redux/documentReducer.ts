@@ -2,7 +2,7 @@
 import * as types from './actionTypes';
 import { ADD_DOC, EDIT_DOC, DELETE_DOC } from './actionTypes';
 // define default state of each reducer
-interface DocumentState {
+export interface DocumentState {
   docList: Document[]
 }
 
@@ -10,7 +10,7 @@ interface DocumentAction {
   type: string,
   payload: Document,
 }
-interface Document {
+export interface Document {
   name: string;
   url: string;
   notes: string;
@@ -26,15 +26,12 @@ const documentState: DocumentState = {
 // use defaul params to assign default state to state param
 export default function documentReducer(state = documentState, action: DocumentAction) {
   const { docList } = state;
-  // let newUrl = state.url;
-  // let newNotes = state.notes;
-  const newDocList = [... docList];
+  const newDocList = [...docList];
   switch(action.type) {
     case ADD_DOC:
-      
+      newDocList.push(action.payload);
       return {
-        // name, url, notes
-        ...state, docList: newDocList.push(action.payload),
+        ...state, docList: newDocList,
       };
 
     case EDIT_DOC:

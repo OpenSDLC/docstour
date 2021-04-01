@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { Error } from './types';
 import os from 'os';
+import cors from 'cors';
 // import path from 'path';
 import apiRouter from './routes/api';
 
@@ -11,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('dist'));
-
+app.use(cors())
 app.use('/api', apiRouter);
 
 app.get('/api/getUsername', (req: Request, res: Response) => res.send({ username: os.userInfo().username }));
