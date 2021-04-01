@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
-import db from '../models/Document';
 import { Request, Response, NextFunction } from 'express';
+import db from '../models/Document';
 // xyz_ need to import
 // import { } from '../types';
 
