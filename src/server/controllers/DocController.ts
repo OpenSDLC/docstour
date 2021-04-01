@@ -44,12 +44,28 @@ class DocController {
   }
   // xyz_ need types
   static updateDocument(req: Request, res: Response, next: NextFunction) {
-
+    
   }
   // xyz_ need types
-  static deleteDocument() {// update state
-    // return updated state
-
+  static async deleteDocument(req: Request, res: Response, next: NextFunction) {// update state
+    try {
+      // destructure id from params
+      const { id } = req.params;
+      // create values
+      const values = [ id ];
+      // query db
+      // xyz_check
+      const sqlQuery = `DELETE FROM documents_table WHERE document_id = $1`;
+      // run query
+      const result = await db.query(sqlQuery, values);
+      // console.log(result.rows);
+      // set result to res.locals
+      res.locals.deletedMessage = `Data for imdb_film_id = ${values} successfully deleted.`;
+      return next();
+    } catch (err) {
+      console.log('Error in deleteDocument - Controller');
+      console.log(err);
+    }
   }
 }
 
