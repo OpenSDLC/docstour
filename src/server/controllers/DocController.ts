@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import db from '../models/Document';
 import { Request, Response, NextFunction } from 'express';
 // xyz_ need to import
-import { } from '../types';
+// import { } from '../types';
 
 class DocController {
   // xyz_ need types
@@ -28,7 +28,7 @@ class DocController {
       console.log(err);
     }
   }
-  // xyz_ need types
+
   static async getDocuments(req: Request, res: Response, next: NextFunction) {
     try {
       const sqlQuery = `SELECT * FROM documents_table`;
@@ -42,7 +42,7 @@ class DocController {
       console.log(err)
     }
   }
-  // xyz_ need types
+
   static async updateDocument(req: Request, res: Response, next: NextFunction) {
     try {
       // destructure id from params
