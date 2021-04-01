@@ -20,3 +20,7 @@ body {
   max-width: 300px;
   margin: 25px;
 }
+
+.listContainer {
+  display: flex;
+}
