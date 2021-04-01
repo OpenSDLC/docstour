@@ -6,3 +6,17 @@ body {
   text-align: center;
   margin: auto;
 }
+
+.DocList {
+  border: 1pt;
+}
+
+/* .primaryBtn {
+  background-color: green;
+  color: white;
+} */
+
+.card {
+  max-width: 300px;
+  margin: 25px;
+}

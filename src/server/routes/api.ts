@@ -12,8 +12,8 @@ const apiRouter = express.Router();
 //   res.status(200).json(res.locals.document);
 // });
 
-apiRouter.get('/', DocController.getDocuments, (req, res) => {
-  res.status(200).json(res.locals.getDocuments);
+apiRouter.get('/', DocController.getDocuments, (req: Request, res: Response) => {
+  res.status(200).json(res.locals.allDocuments);
 });
 
 // apiRouter.put('/:id', AuthController.verifyUser, DocController.updateDocument, (req, res) => {
