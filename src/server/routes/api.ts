@@ -8,9 +8,9 @@ import AuthController from '../controllers/AuthController';
 const apiRouter = express.Router();
 
 // add methods to router object
-// apiRouter.post('/', AuthController.verifyUser, DocController.postDocument, (req, res) => {
-//   res.status(200).json(res.locals.document);
-// });
+apiRouter.post('/', AuthController.verifyUser, DocController.postDocument, (req, res) => {
+  res.status(200).json(res.locals.document);
+});
 
 apiRouter.get('/', DocController.getDocuments, (req: Request, res: Response) => {
   const { allDocuments } = res.locals;

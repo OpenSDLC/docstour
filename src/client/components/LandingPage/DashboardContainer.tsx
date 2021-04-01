@@ -29,7 +29,7 @@ async function getDocuments() {
   const result = await fetchResult.json();
   result.forEach((document: any) => {
     console.log(document);
-  })
+  });
 }
 
 interface State {
