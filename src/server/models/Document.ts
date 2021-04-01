@@ -11,8 +11,8 @@ const pool: Pool = new Pool({
   host: myURI
 });
 
-module.exports = {
-  query: (text: string, params: Array<string | number>, callback: any) => {
+export default {
+  query: (text: string, params?: any, callback?: any): any => {
     console.log('Query String: ', text);
     return pool.query(text, params, callback);
   }

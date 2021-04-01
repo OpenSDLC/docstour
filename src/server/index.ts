@@ -1,4 +1,5 @@
 import express, { Request, Response, NextFunction } from 'express';
+import { Error } from './types';
 import os from 'os';
 // import path from 'path';
 import apiRouter from './routes/api';
@@ -23,12 +24,6 @@ app.get('/', (req: Request, res: Response) => {
 app.get('/', (req: Request, res: Response) => {
   res.status(400).send('Status 400: Something broke')
 });
-
-// TypeScript interface
-interface Error {
-  status?: number;
-  message?: string;
-}
 
 // 500 error
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
