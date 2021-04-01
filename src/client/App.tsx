@@ -19,7 +19,7 @@ export default function App () {
   // </Switch>
     // </Router>
     <div>
-      {/* <h1>DocsTour</h1> */}
+      <h1>DocsTour</h1>
       <DashboardContainer />
     </div>
   );
