@@ -65,8 +65,7 @@ class DocController {
       console.log(err);
     }
     }
-  }
-  // xyz_ need types
+
   static async deleteDocument(req: Request, res: Response, next: NextFunction) {// update state
     try {
       // destructure id from params
