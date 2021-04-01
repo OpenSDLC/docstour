@@ -14,10 +14,12 @@ class DocController {
     try {
       const getAll = `SELECT * FROM documents_table`;
       const result = await db.query(getAll);
-      const allDocs = result.rows;
-      res.locals.allDocs = allDocs;
-      next();
+      console.log(result.rows)
+      const allDocuments = result.rows;
+      res.locals.allDocuments = allDocuments;
+      return next();
     } catch(err) {
+      console.log('better luck next time. - Controller');
       console.log(err)
     }
   }

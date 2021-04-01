@@ -1,5 +1,5 @@
 /* Functions associated with the strings. */
-import { INCREMENT, DECREMENT, ADD_DOC, EDIT_DOC, DELETE_DOC } from './actionTypes';
+import { INCREMENT, DECREMENT, ADD_DOC, EDIT_DOC, DELETE_DOC, SAVE_URL_INPUT } from './actionTypes';
 
 export const addDoc = (name: string, url: string, notes: string) => ({
   type: ADD_DOC,
@@ -23,5 +23,9 @@ export const incrementCounter = () => ({
 });
 
 export const decrementCounter = () => ({
-  type: DECREMENT
+  type: DECREMENT,
+});
+
+export const saveURLInput = () => ({
+  type: SAVE_URL_INPUT,
 });

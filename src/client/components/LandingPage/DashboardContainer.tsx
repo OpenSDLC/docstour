@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import store from '../../redux/store';
 import ListOfDocs from './ListOfDocs';
 import { TextField, Button, Box, Card } from '@material-ui/core';
 import { connect, ConnectedProps } from 'react-redux';
 // import the action creators from actions.ts
 import { incrementCounter, decrementCounter, addDoc } from '../../redux/actions';
+
 interface Counter {
   count: number;
 }
 interface State {
   counter: Counter;
-}
+}p
 interface Props {
   increment: () => {};
   decrement: () => {};
@@ -20,7 +22,7 @@ interface Props {
 // pass in state
 const mapStateToProps = (state: State) => {
   return {
-    count: state.counter.count
+    count: state.counter.count,
   }
 };
 
@@ -32,6 +34,17 @@ const mapDispatchToProps = (dispatch: typeof store.dispatch) => {
     // addDoc: () => dispatch(addDoc(name, url, notes)),
   }
 }
+
+async function getDocuments() {
+  const result = await fetch('http://localhost:3000/api/', {
+    method: 'GET',
+    mode: "no-cors"
+  });
+  console.log('Hello, hello');
+  console.log("result: ", result.body.allDocuments);
+}
+
+
 
 class DashboardContainer extends Component<Props> {
   constructor(props: Props) {
@@ -45,8 +58,9 @@ class DashboardContainer extends Component<Props> {
   // BUTTON to add docs
 
   // search bar - component
-
-
+  componentDidMount() {
+    getDocuments();
+  };
   render() {
     // this.props.testKey = 'hello';
     // console.log('testKey', this.props.testKey);

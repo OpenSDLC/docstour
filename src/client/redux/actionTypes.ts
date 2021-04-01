@@ -6,3 +6,5 @@ export const DELETE_DOC = 'DELETE_DOC';
 
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
+
+export const SAVE_URL_INPUT = 'SAVE_URL_INPUT';

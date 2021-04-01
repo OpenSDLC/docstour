@@ -17,3 +17,4 @@ INSERT INTO categories_table(category_name, user_id) VALUES('Tammy Category', 3)
 INSERT INTO categories_table(category_name, user_id) VALUES('Anthonys Docs', 4);
 
 INSERT INTO documents_table(document_name, url, notes, category_id) VALUES('Anthonys Doc 001', 'http://docstour.org/lilRapName/001',  'Regularly kicked out of Zoom', 4);
+INSERT INTO documents_table(document_name, url, notes, category_id) VALUES('NO CORS === NO GOOD', 'http://hackme.org/lilRapName/001',  'I\m watching YOU!', 4);
