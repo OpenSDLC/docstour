@@ -17,9 +17,9 @@ apiRouter.get('/', DocController.getDocuments, (req: Request, res: Response) => 
   res.status(200).json(allDocuments);
 });
 
-// apiRouter.put('/:id', AuthController.verifyUser, DocController.updateDocument, (req, res) => {
-//   res.status(200).json(res.locals.document);
-// });
+apiRouter.put('/:id', AuthController.verifyUser, DocController.updateDocument, (req, res) => {
+  res.status(200).json(res.locals.document);
+});
 
 apiRouter.delete('/:id', AuthController.verifyUser, DocController.deleteDocument, (req, res) => {
   res.status(200).json(res.locals.deletedMessage);
