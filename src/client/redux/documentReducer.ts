@@ -1,6 +1,6 @@
 // import types 
 import * as types from './actionTypes';
-import { ADD_DOC, EDIT_DOC, DELETE_DOC } from './actionTypes';
+import { ADD_DOC, EDIT_DOC, DELETE_DOC, FETCH_DOCS } from './actionTypes';
 // define default state of each reducer
 export interface DocumentState {
   docList: Document[]
@@ -33,7 +33,10 @@ export default function documentReducer(state = documentState, action: DocumentA
       return {
         ...state, docList: newDocList,
       };
-
+    case FETCH_DOCS: 
+      return {
+        ...state, docList: action.payload,
+      };
     case EDIT_DOC:
       return {
         ...state

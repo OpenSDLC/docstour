@@ -6,8 +6,9 @@ import { TextField, Button, Box, Card } from '@material-ui/core';
 import { connect, ConnectedProps } from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 // import the action creators from actions.ts
-import { incrementCounter, decrementCounter, addDoc } from '../../redux/actions';
-
+import { incrementCounter, decrementCounter, addDoc, fetchDocs } from '../../redux/actions';
+import { fetchDocuments } from '../../redux/actions';
+const {dispatch} = store;
 interface Counter {
   count: number;
 }
@@ -15,6 +16,7 @@ interface Props {
   increment: () => {};
   decrement: () => {};
   addDoc: (name: string, url: string, notes: string) => {};
+  fetchDocuments: () => {};
   count: number;
 }
 
@@ -60,7 +62,9 @@ class DashboardContainer extends Component<Props, State> {
 
   // search bar - component
   componentDidMount() {
-    getDocuments();
+    // getDocuments();
+    // console.log(this.props.fetchDocs());
+    this.props.fetchDocuments();
   };
   handleChange(event: any) {
     switch (event.target.name) {
@@ -129,6 +133,7 @@ const mapDispatchToProps = (dispatch: typeof store.dispatch) => {
     increment: () => dispatch(incrementCounter()),
     decrement: () => dispatch(decrementCounter()),
     addDoc: (name: string, url: string, notes: string) => dispatch(addDoc(name, url, notes)),
+    fetchDocuments,
     count: 0
   }
 }
